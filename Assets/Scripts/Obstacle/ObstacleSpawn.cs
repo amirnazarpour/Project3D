@@ -31,7 +31,7 @@ namespace Obstacle
                 }
             }
         }
-    
+
         public ObstacleObject Spawn(float offset)
         {
             int _random = Random.Range(0, obstacles.Length);

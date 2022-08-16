@@ -10,7 +10,10 @@ namespace Player
         public Action Up;
         public Action Down;
 
+        public float Offset;
+
         Vector3 last;
+        
         void Update()
         {
             if (LogicCheck.IsPlay)
@@ -29,14 +32,18 @@ namespace Player
                     Vector3 mouse = Input.mousePosition;
                     if (last != mouse)
                     {
-                        if (mouse.y > last.y)
+                        if (mouse.y > last.y + Offset || mouse.y < last.y - Offset)
                         {
-                            Up();
+                            if (mouse.y > last.y)
+                            {
+                                Up();
+                            }
+                            else
+                            {
+                                Down();
+                            }
                         }
-                        else
-                        {
-                            Down();
-                        }
+
                         last = mouse;
                     }
                 }

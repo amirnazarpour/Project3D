@@ -30,7 +30,7 @@ public class ShadowPlayer : MonoBehaviour
         if (Target != null)
         {
             float distance = Vector3.Distance(transform.position, Target.position);
-            transform.localScale = new Vector3(0.7f, obstacle.highest, distance);
+            transform.localScale = new Vector3(0.5f, obstacle.highest, distance);
         }
     }
 }
